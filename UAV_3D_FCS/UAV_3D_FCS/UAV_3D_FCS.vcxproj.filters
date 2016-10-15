@@ -48,6 +48,12 @@
     <ClInclude Include="OSGView.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="StructOfProtocols.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StructOfProtocolsConvertToRealData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UAV_3D_FCS.cpp">
@@ -72,6 +78,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="OSGView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StructOfProtocolsConvertToRealData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
