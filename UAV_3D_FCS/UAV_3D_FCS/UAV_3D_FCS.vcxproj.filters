@@ -54,6 +54,18 @@
     <ClInclude Include="StructOfProtocolsConvertToRealData.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ConnectionViewControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FlightSysViewControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayBackViewControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UAV_3D_FCS.cpp">
@@ -81,6 +93,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="StructOfProtocolsConvertToRealData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectionViewControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FlightSysViewControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayBackViewControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpClient.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

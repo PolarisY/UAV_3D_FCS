@@ -6,6 +6,9 @@
 
 #include "MySplitterWnd.h"
 #include "OSGViewControl.h"
+#include "ConnectionViewControl.h"
+#include "FlightSysViewControl.h"
+#include "PlayBackViewControl.h"
 
 class CMainFrame : public CFrameWnd
 {
@@ -38,11 +41,14 @@ protected:  // 控件条嵌入成员
 
 private:
 	//将总窗口分为两行一列
-	CMySplitterWnd m_splitter_wnd;   
+	CMySplitterWnd m_SplitterWnd;   
+
+	CMySplitterWnd m_SplitterChild;
+
 	//将下面的一行分成一行两列
-	CMySplitterWnd m_splitter_wnd_bottom;
+	//CMySplitterWnd m_SplitterWndBottom;
 	//将上面的一行分成一行两列
-	CMySplitterWnd m_splitter_wnd_top;
+	//CMySplitterWnd m_SplitterWndTop;
 
 
 

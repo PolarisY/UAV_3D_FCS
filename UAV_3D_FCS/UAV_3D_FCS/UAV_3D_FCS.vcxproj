@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\vs2015\VC\include\boost;$(IncludePath)</IncludePath>
-    <ReferencePath>F:\vs2015\VC\lib\libx64;$(ReferencePath)</ReferencePath>
+    <IncludePath>F:\vs2015\VC\include\asio;$(IncludePath)</IncludePath>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -114,7 +114,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;ASIO_STANDALONE;ASIO_HAS_STD_CHRONO;ASCS_HAS_STD_SHARED_MUTEX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -187,24 +187,31 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConnectionViewControl.h" />
+    <ClInclude Include="FlightSysViewControl.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="MySplitterWnd.h" />
     <ClInclude Include="OSGView.h" />
     <ClInclude Include="OSGViewControl.h" />
+    <ClInclude Include="PlayBackViewControl.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StructOfProtocols.h" />
     <ClInclude Include="StructOfProtocolsConvertToRealData.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TcpClient.h" />
     <ClInclude Include="UAV_3D_FCS.h" />
     <ClInclude Include="UAV_3D_FCSDoc.h" />
     <ClInclude Include="UAV_3D_FCSView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConnectionViewControl.cpp" />
+    <ClCompile Include="FlightSysViewControl.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MySplitterWnd.cpp" />
     <ClCompile Include="OSGView.cpp" />
     <ClCompile Include="OSGViewControl.cpp" />
+    <ClCompile Include="PlayBackViewControl.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -212,6 +219,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="StructOfProtocolsConvertToRealData.cpp" />
+    <ClCompile Include="TcpClient.cpp" />
     <ClCompile Include="UAV_3D_FCS.cpp" />
     <ClCompile Include="UAV_3D_FCSDoc.cpp" />
     <ClCompile Include="UAV_3D_FCSView.cpp" />

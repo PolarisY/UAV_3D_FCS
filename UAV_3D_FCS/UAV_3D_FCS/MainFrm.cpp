@@ -62,6 +62,7 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockControlBar(&m_wndToolBar);*/
 
+	/*去掉菜单栏*/
 	SetMenu(NULL);
 
 	return 0;
@@ -103,68 +104,43 @@ void CMainFrame::Dump(CDumpContext& dc) const
 BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
 {
 	// TODO: 在此添加专用代码和/或调用基类
-#if 0
-	CRect rect;
-	GetClientRect(&rect);
 
 	int cx = GetSystemMetrics(SM_CXSCREEN);
 	int	cy = GetSystemMetrics(SM_CYSCREEN);
 	SetWindowPos(NULL, 0, 0, cx, cy, SWP_NOMOVE);
 
+	CRect rect;
+	GetClientRect(&rect);
 
-
-	//整体分成2行一列
-	if (!m_splitter_wnd.CreateStatic(this, 2, 1, WS_CHILD | WS_VISIBLE | WS_BORDER))
-	{
-		return FALSE;
-	}
-
-	//将下面的一行分成一行两列
-	if (!m_splitter_wnd_bottom.CreateStatic(this, 1, 2, WS_CHILD | WS_VISIBLE | WS_BORDER))
-	{
-		return FALSE;
-	}
-
-	//将上面的一行分成一行两列
-	if (!m_splitter_wnd_top.CreateStatic(this, 1, 2, WS_CHILD | WS_VISIBLE | WS_BORDER))
-	{
-		return FALSE;
-	}
-	//下面进行 行和列 的长度设置
-	m_splitter_wnd.SetRowInfo(0, (int)(rect.Height() * 0.9), 0);
-
-	m_splitter_wnd_bottom.SetColumnInfo(0, (int)(rect.Width() * 0.7), 0);
-	m_splitter_wnd_bottom.SetColumnInfo(1, (int)(rect.Width() * 0.3), 0);
-
-	m_splitter_wnd_top.SetColumnInfo(0, (int)(rect.Width() * 0.7), 0);
-	m_splitter_wnd_top.SetColumnInfo(1, (int)(rect.Width() * 0.3), 0);
-	
-	//3D
-	if (!m_splitter_wnd.CreateView(0, 0, RUNTIME_CLASS(COSGViewControl), CSize((int)rect.Width() * 0.7, (int)(rect.Height() * 0.9)), pContext))
-	{
-		return FALSE;
-	}
-
-	//飞控
-	if (!m_splitter_wnd_top.CreateView(0, 1, nullptr, CSize((int)rect.Width() * 0.3, (int)(rect.Height() * 0.9)), pContext))
-	{
-		return FALSE;
-	}
-
-	//MySQL
-	if (!m_splitter_wnd_bottom.CreateView(1, 0, nullptr, CSize((int)rect.Width() * 0.7, (int)(rect.Height() * 0.1)), pContext))
-	{
-		return FALSE;
-	}
-
-	//connect
-	if (!m_splitter_wnd_bottom.CreateView(1, 1, nullptr, CSize((int)rect.Width() * 0.3, (int)(rect.Height() * 0.1)), pContext))
+	/*将主窗口分成4个区域*/
+	if (!m_SplitterWnd.CreateStatic(this, 2, 2, WS_CHILD | WS_VISIBLE | WS_BORDER))
 	{
 		return FALSE;
 	} 
 
-#endif
+	/*左上角用于3D模块*/
+	if (!m_SplitterWnd.CreateView(0, 0, RUNTIME_CLASS(COSGViewControl), CSize((int)rect.Width() * 0.7, (int)(rect.Height() * 0.8)), pContext))
+	{
+		return FALSE;
+	}
 
+	/*右上角用于飞行控制模块*/
+	if (!m_SplitterWnd.CreateView(0, 1, RUNTIME_CLASS(CFlightSysViewControl), CSize((int)rect.Width() * 0.3, (int)(rect.Height() * 0.8)), pContext))
+	{
+		return FALSE;
+	}
+
+	/*左下角用于数据回放模块*/
+	if (!m_SplitterWnd.CreateView(1, 0, RUNTIME_CLASS(CPlayBackViewControl), CSize((int)rect.Width() * 0.7, (int)(rect.Height() * 0.2)), pContext))
+	{
+		return FALSE;
+	}
+
+	/*右下角用于通信连接模块*/
+	if (!m_SplitterWnd.CreateView(1, 1, RUNTIME_CLASS(CConnectionViewControl), CSize((int)rect.Width() * 0.3, (int)(rect.Height() * 0.2)), pContext))
+	{
+		return FALSE;
+	} 
 
 	return true;
 }

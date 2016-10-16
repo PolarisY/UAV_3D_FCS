@@ -38,8 +38,8 @@ struct BaseDataDC
 struct TSPIDC : public BaseDataDC
 {
 	MessageHeader   m_MessageHeader;     //消息头
-	boost::uint16_t m_ID = 0;              //飞机编号  3、4
-	boost::uint16_t m_DID = 0;             //目的编号  5、6
+	UAV::uint16_t m_ID = 0;              //飞机编号  3、4
+	UAV::uint16_t m_DID = 0;             //目的编号  5、6
 	double m_LOTD = 0.0;                   //即时经度  7、8、9、10
 	double m_LATD = 0.0;                   //即时纬度  11、12、13、14
 	double m_SPH = 0.0;                    //标准气压高度  15、16

@@ -25,7 +25,7 @@ protected:
 
 public:
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_BASE_VIEW_CONTROL };
+	enum { IDD = IDD_OSG };
 #endif
 #ifdef _DEBUG
 	virtual void AssertValid() const;
