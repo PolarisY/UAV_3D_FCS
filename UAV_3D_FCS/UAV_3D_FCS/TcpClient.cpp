@@ -37,7 +37,7 @@ CTcpClient::~CTcpClient()
 *******************************************************************************/
 void CTcpClient::SetConnectAddr(unsigned short port, const std::string& ip)
 {
-	m_client.add_client(port, ip);
+	m_client.set_server_addr(port, ip);
 }
 
 /*! @function
@@ -67,7 +67,7 @@ void CTcpClient::StopTcpConnect()
 {
 	if (m_pump.is_running())
 	{
-		m_pump.stop_service();
+		m_pump.stop();
 	}
 }
 
@@ -82,5 +82,5 @@ void CTcpClient::StopTcpConnect()
 *******************************************************************************/
 bool CTcpClient::IsTcpConnecting()
 {
-	return m_client.is_started();
+	return m_client.is_connected();
 }

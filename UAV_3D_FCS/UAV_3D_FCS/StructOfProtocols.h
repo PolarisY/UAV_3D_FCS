@@ -12,16 +12,16 @@
 ***************************************************************/
 
 #include "kapok/Kapok.hpp"
-//#include "UAV/cstdint.hpp"
+#include "boost/cstdint.hpp"
 
-namespace UAV { 
-	typedef			 char      int8_t;
-	typedef unsigned char      uint8_t;
-	typedef			 short     int16_t;
-	typedef unsigned short     uint16_t;
-	typedef			 int       int32_t;
-	typedef	unsigned int       uint32_t;
-}
+//namespace boost { 
+//	typedef			 char      int8_t;
+//	typedef unsigned char      uint8_t;
+//	typedef			 short     int16_t;
+//	typedef unsigned short     uint16_t;
+//	typedef			 int       int32_t;
+//	typedef	unsigned int       uint32_t;
+//}
 
 
 
@@ -46,21 +46,21 @@ struct BaseData
 ***************************************************************/
 struct MessageHeader
 {
-	UAV::uint16_t MESSAGE_CODE = 0;         //消息代码：3002
-	UAV::uint16_t MSG_Length = 0;           //报文长度
-	UAV::uint16_t MESSAGE_COUNTER = 0;      //备用
-	UAV::uint16_t LogicSendID = 0;          //发方设备ID：网管服务器，取值501
-	UAV::uint16_t LogicReceID = 0;          //收方设备ID：地面应用系统，取值401
-	UAV::uint8_t  MESSAGE_LENGTH = 0;       //消息体长度
-	UAV::uint16_t MESSAGE_NUMBER = 0;       //备用
-	UAV::uint8_t  COMM_SOURCE_ADDR = 0;     //发送平台地址（飞机编号）
-	UAV::uint8_t  COMM_TARGET_ADDR = 0;     //接收平台地址
-	UAV::uint8_t  date = 0;                 //是否跨零点的日期
-	UAV::uint8_t  hour = 0;                 //24小时制的时
-	UAV::uint8_t  minute = 0;               //分
-	UAV::uint8_t  second = 0;               //秒
-	UAV::uint16_t millSecond = 0;           //毫秒
-	UAV::uint16_t PID = 0;                  //飞机编号
+	boost::uint16_t MESSAGE_CODE = 0;         //消息代码：3002
+	boost::uint16_t MSG_Length = 0;           //报文长度
+	boost::uint16_t MESSAGE_COUNTER = 0;      //备用
+	boost::uint16_t LogicSendID = 0;          //发方设备ID：网管服务器，取值501
+	boost::uint16_t LogicReceID = 0;          //收方设备ID：地面应用系统，取值401
+	boost::uint8_t  MESSAGE_LENGTH = 0;       //消息体长度
+	boost::uint16_t MESSAGE_NUMBER = 0;       //备用
+	boost::uint8_t  COMM_SOURCE_ADDR = 0;     //发送平台地址（飞机编号）
+	boost::uint8_t  COMM_TARGET_ADDR = 0;     //接收平台地址
+	boost::uint8_t  date = 0;                 //是否跨零点的日期
+	boost::uint8_t  hour = 0;                 //24小时制的时
+	boost::uint8_t  minute = 0;               //分
+	boost::uint8_t  second = 0;               //秒
+	boost::uint16_t millSecond = 0;           //毫秒
+	boost::uint16_t PID = 0;                  //飞机编号
 
 	META(MESSAGE_CODE, MSG_Length, MESSAGE_COUNTER, LogicSendID,
 		LogicReceID, MESSAGE_LENGTH, MESSAGE_NUMBER,
@@ -111,22 +111,22 @@ struct MessageHeader
 struct TSPI : public BaseData
 {
 	MessageHeader   m_MessageHeader;     //消息头
-	UAV::uint16_t m_ID = 0;            //飞机编号  3、4
-	UAV::uint16_t m_DID = 0;           //目的编号  5、6
-	UAV::uint16_t m_LLOTD = 0;         //即时经度低位  7、8
-	UAV::uint16_t m_HLOTD = 0;         //即时经度高位  9、10
-	UAV::uint16_t m_LLATD = 0;         //即时纬度低位  11、12
-	UAV::uint16_t m_HLATD = 0;         //即时纬度高位  13、14
-	UAV::int16_t m_SPH = 0;            //标准气压高度  15、16
-	UAV::int16_t m_PRH = 0;            //气压修正高度  17、18
-	UAV::int16_t m_RH = 0;             //无线电高度  19、20
-	UAV::int16_t m_VS = 0;             //真空速  21、22
-	UAV::int16_t m_IVS = 0;            //指示空速  23、24
-	UAV::int16_t m_TH = 0;             //真航向  25、26
-	UAV::int16_t m_ANGP = 0;           //俯仰角  27、28
-	UAV::int16_t m_ANGR = 0;           //横滚角  29、30
-	UAV::int16_t m_ANGPS = 0;          //俯仰角速率  31、32
-	UAV::int16_t m_ANGRS = 0;          //横滚角速率  33、34
+	boost::uint16_t m_ID = 0;            //飞机编号  3、4
+	boost::uint16_t m_DID = 0;           //目的编号  5、6
+	boost::uint16_t m_LLOTD = 0;         //即时经度低位  7、8
+	boost::uint16_t m_HLOTD = 0;         //即时经度高位  9、10
+	boost::uint16_t m_LLATD = 0;         //即时纬度低位  11、12
+	boost::uint16_t m_HLATD = 0;         //即时纬度高位  13、14
+	boost::int16_t m_SPH = 0;            //标准气压高度  15、16
+	boost::int16_t m_PRH = 0;            //气压修正高度  17、18
+	boost::int16_t m_RH = 0;             //无线电高度  19、20
+	boost::int16_t m_VS = 0;             //真空速  21、22
+	boost::int16_t m_IVS = 0;            //指示空速  23、24
+	boost::int16_t m_TH = 0;             //真航向  25、26
+	boost::int16_t m_ANGP = 0;           //俯仰角  27、28
+	boost::int16_t m_ANGR = 0;           //横滚角  29、30
+	boost::int16_t m_ANGPS = 0;          //俯仰角速率  31、32
+	boost::int16_t m_ANGRS = 0;          //横滚角速率  33、34
 
 	META(m_MessageHeader, m_ID, m_DID, m_LLOTD, m_HLOTD,
 		m_LLATD, m_HLATD, m_SPH, m_PRH,

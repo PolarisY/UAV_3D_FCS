@@ -1,5 +1,14 @@
-// ConnectionViewControl.cpp : 实现文件
-//
+/***************************************************************
+* Copyright (c) 2016, 陈登龙
+* All rights reserved.
+*
+* 文件名称：ConnectionViewControl.cpp
+* 摘    要：用于本项目的通信连接模块的视图类的cpp文件
+*
+* 当前版本：1.0
+* 作    者：陈登龙
+* 完成日期：2016-10-21
+***************************************************************/
 
 #include "stdafx.h"
 #include "UAV_3D_FCS.h"
@@ -53,7 +62,7 @@ void CConnectionViewControl::Dump(CDumpContext& dc) const
 
 void CConnectionViewControl::OnBnClickedBtnReset()
 {
-	//获取设置的IP
+	////获取设置的IP
 	CString _ip;
 	GetDlgItemText(IDC_TCP_IP, _ip);
 	std::string ip;

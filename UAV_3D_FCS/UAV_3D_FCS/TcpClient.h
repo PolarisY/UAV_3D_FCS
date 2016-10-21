@@ -11,17 +11,22 @@
 * 完成日期：2016-10-16
 ***************************************************************/
 
+#include "stdafx.h"
+#include "communication/st_asio_wrapper_base.h"
+#include "communication/st_asio_wrapper_tcp_client.h"
 
-#include "ascs/ext/client.h"
-using namespace ascs;
-using namespace ascs::ext;
+#undef  MAX_MSG_NUM
+#define MAX_MSG_NUM	   1500
+#define FORCE_TO_USE_MSG_RECV_BUFFER  //force to use the msg recv buffer
+
+using namespace st_asio_wrapper;
 
 
 
 /*! @class
 ********************************************************************************
 * 类名称   : CTcpClient
-* 功能     : CTcpClient提供基于Asio(Non-Boost)完全异步加多线程的网络通信接口。
+* 功能     : CTcpClient提供基于Boost.Asio完全异步加多线程的网络通信接口。
 * 作者     : 陈登龙 南昌航空大学信息工程学院自动控制系
 * 当前版本 ：1.0
 * 作    者 ：陈登龙
@@ -51,36 +56,39 @@ private:
 	/*! @class
 	********************************************************************************
 	* 类名称   : MyConnector
-	* 功能     : MyConnector是基于Asio的connector拓展的tcp-socket，
-				 作为类型传入tcp::client_base<MyConnector> m_client，
+	* 功能     : MyConnector是基于Boost.Asio的st_connector拓展的tcp-socket，
+				 作为类型传入st_sclient<MyConnector> m_client,
 				 作为本项目的通信客户端对象。
 	* 作者     : 陈登龙 南昌航空大学信息工程学院自动控制系
 	* 当前版本 ：1.0
 	* 作    者 ：陈登龙
-	* 完成日期 ：2016-10-16
+	* 完成日期 ：2016-10-17
 	*******************************************************************************/
-	class MyConnector : public connector
+	class MyConnector : public st_connector
 	{
 		public:
-			MyConnector(asio::io_service& io_service_) : connector(io_service_)
+			MyConnector(boost::asio::io_service& io_service_) : st_connector(io_service_)
 			{
 
 			}
 
 		protected:
-			bool on_msg_handle(out_msg_type& msg, bool link_down)
+			typedef std::string MsgType;
+
+			void on_msg_handle(MsgType& msg)
 			{
 				//自定义处理数据包。
-				return true;
-			} 
+				AfxMessageBox(_T("on_msg_handle->rec msg!"));
+			}  
 	};
 
 private: 
 
 	/* TCP客户端服务泵 */
-	service_pump m_pump;
+	st_service_pump  m_pump;
 
 	/* TCP通信的客户端对象 */
-	tcp::client_base<MyConnector> m_client;
+	st_sclient<MyConnector> m_client;
 };
 
+#undef FORCE_TO_USE_MSG_RECV_BUFFER

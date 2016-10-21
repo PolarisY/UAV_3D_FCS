@@ -29,8 +29,8 @@ void TSPIDC::TSPIToTSPIDC(const TSPI& tspi, const bool isToEngUint)
 	m_MessageHeader = tspi.m_MessageHeader;       //ÏûÏ¢Í·
 	m_ID = tspi.m_ID;
 	m_DID = tspi.m_DID;
-	m_LOTD = (double)(((UAV::int32_t)tspi.m_LLOTD + (UAV::int32_t)(tspi.m_HLOTD << 16)) * 90.0 / 1073741824.0);
-	m_LATD = (double)(((UAV::int32_t)tspi.m_LLATD + (UAV::int32_t)(tspi.m_HLATD << 16)) * 45.0 / 1073741824.0);
+	m_LOTD = (double)(((boost::int32_t)tspi.m_LLOTD + (boost::int32_t)(tspi.m_HLOTD << 16)) * 90.0 / 1073741824.0);
+	m_LATD = (double)(((boost::int32_t)tspi.m_LLATD + (boost::int32_t)(tspi.m_HLATD << 16)) * 45.0 / 1073741824.0);
 	m_SPH = (double)tspi.m_SPH;
 	m_PRH = (double)tspi.m_PRH;
 	m_RH = (double)tspi.m_RH;
