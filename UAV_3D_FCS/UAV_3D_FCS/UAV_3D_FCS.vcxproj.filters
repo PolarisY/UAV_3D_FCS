@@ -48,12 +48,6 @@
     <ClInclude Include="OSGView.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="StructOfProtocols.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="StructOfProtocolsConvertToRealData.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ConnectionViewControl.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -90,9 +84,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="OSGView.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="StructOfProtocolsConvertToRealData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ConnectionViewControl.cpp">
