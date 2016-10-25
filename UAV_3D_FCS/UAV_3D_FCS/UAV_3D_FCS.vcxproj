@@ -202,6 +202,7 @@
     <ClInclude Include="UAV_3D_FCS.h" />
     <ClInclude Include="UAV_3D_FCSDoc.h" />
     <ClInclude Include="UAV_3D_FCSView.h" />
+    <ClInclude Include="UdpClient.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConnectionViewControl.cpp" />
@@ -221,6 +222,7 @@
     <ClCompile Include="UAV_3D_FCS.cpp" />
     <ClCompile Include="UAV_3D_FCSDoc.cpp" />
     <ClCompile Include="UAV_3D_FCSView.cpp" />
+    <ClCompile Include="UdpClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UAV_3D_FCS.rc" />

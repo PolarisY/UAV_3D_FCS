@@ -58,7 +58,7 @@ private:
 	* 类名称   : MyConnector
 	* 功能     : MyConnector是基于Boost.Asio的st_connector拓展的tcp-socket，
 				 作为类型传入st_sclient<MyConnector> m_client,
-				 作为本项目的通信客户端对象。
+				 作为本项目的TCP通信客户端对象。
 	* 作者     : 陈登龙 南昌航空大学信息工程学院自动控制系
 	* 当前版本 ：1.0
 	* 作    者 ：陈登龙

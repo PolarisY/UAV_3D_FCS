@@ -60,6 +60,9 @@
     <ClInclude Include="TcpClient.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="UdpClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UAV_3D_FCS.cpp">
@@ -96,6 +99,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="TcpClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UdpClient.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
