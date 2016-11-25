@@ -63,6 +63,9 @@
     <ClInclude Include="UdpClient.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="protocol\FCToPCProtocolStruct.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UAV_3D_FCS.cpp">
