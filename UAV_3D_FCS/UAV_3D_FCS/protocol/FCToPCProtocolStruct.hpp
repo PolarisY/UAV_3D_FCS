@@ -50,7 +50,40 @@ struct MessageHeader
 
 	/*序列化*/
 	META(StartSign, PayloadLength, SequenceNumber, SystemID, ComponentID, MessageID)
+}; 
+
+/*! @struct
+********************************************************************************
+<PRE>
+类名称   : MFA
+功能	 : MFA是对应协议的飞行姿态数据包
+作者     : 陈登龙 南昌航空大学信息工程学院自动控制系
+时间     : 2016-11-25 22:00:00
+</PRE>
+*******************************************************************************/
+struct MFA : public BaseData
+{
+	/*消息头*/
+	MessageHeader  m_MessageHeader;
+
+	boost::uint32_t m_TimeBootMs;	/*< Timestamp (milliseconds since system boot) 自从系统启动后经过的时间ms*/
+	boost::int32_t m_Roll;			/*< Roll angle (rad, -pi..+pi) 滚动角*/
+	boost::int32_t m_Pitch;			/*< Pitch angle (rad, -pi..+pi) 俯仰角*/
+	boost::int32_t m_Yaw;			/*< Yaw angle (rad, -pi..+pi) 偏航角*/
+	boost::int32_t m_RollSpeed;		/*< Roll angular speed (rad/s) 滚动角速度*/
+	boost::int32_t m_PitchSpeed;	/*< Pitch angular speed (rad/s) 俯仰角速度*/
+	boost::int32_t m_YawSpeed;		/*< Yaw angular speed (rad/s) 偏航角速度*/
+	
+	boost::uint8_t m_LowCheckSum;	/*低位字节校验和*/
+	boost::uint8_t m_HighCheckSum;	/*高位字节校验和*/
+
+	/*序列化*/
+	META(m_MessageHeader, m_TimeBootMs, m_Roll, m_Pitch, m_Yaw, m_RollSpeed, m_PitchSpeed, m_YawSpeed, m_LowCheckSum, m_HighCheckSum)
 };
+
+
+
+#if 0
 
 
 /*! @struct
@@ -101,6 +134,7 @@ struct MavlinkRawImu
 };
 
 
+
 /*! @struct
 ********************************************************************************
 <PRE>
@@ -141,29 +175,6 @@ struct CheckSum
 	META(LowCheckSum, HighCheckSum)
 };
 
-/*! @struct
-********************************************************************************
-<PRE>
-类名称   : MFA
-功能	 : MFA是对应协议的飞行姿态数据包
-作者     : 陈登龙 南昌航空大学信息工程学院自动控制系
-时间     : 2016-11-25 22:00:00
-</PRE>
-*******************************************************************************/
-struct MFA : public BaseData
-{
-	/*消息头*/
-	MessageHeader  m_MessageHeader;
-
-	/*飞行姿态数据*/ 
-	MavlinkFlightAttitude m_MavlinkFlightAttitude;
-
-	/*校验和*/
-	CheckSum	   m_CheckSum;
-
-	/*序列化*/
-	META(m_MessageHeader, m_MavlinkFlightAttitude, m_CheckSum)
-};
 
 /*! @struct
 ********************************************************************************
@@ -213,7 +224,7 @@ struct MAT : public BaseData
 	META(m_MessageHeader, m_MavlinkAttitudeTarget, m_CheckSum)
 };
 
-
+#endif
 
 
 

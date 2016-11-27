@@ -195,6 +195,7 @@
     <ClInclude Include="OSGView.h" />
     <ClInclude Include="OSGViewControl.h" />
     <ClInclude Include="PlayBackViewControl.h" />
+    <ClInclude Include="protocol\FCToPCProtocolConvertToRealData.h" />
     <ClInclude Include="protocol\FCToPCProtocolStruct.hpp" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -213,6 +214,7 @@
     <ClCompile Include="OSGView.cpp" />
     <ClCompile Include="OSGViewControl.cpp" />
     <ClCompile Include="PlayBackViewControl.cpp" />
+    <ClCompile Include="protocol\FCToPCProtocolConvertToRealData.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

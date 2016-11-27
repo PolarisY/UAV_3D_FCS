@@ -52,8 +52,8 @@ private:
 	********************************************************************************
 	* 类名称   : MyUdpConnector
 	* 功能     : MyUdpConnector是基于Boost.Asio的st_udp_socket拓展的usp-socket，
-				作为类型传入st_sclient<MyUdpConnector> m_client,
-				作为本项目的UDP通信客户端对象。
+				 作为类型传入st_sclient<MyUdpConnector> m_client,
+				 作为本项目的UDP通信客户端对象。
 	* 作者     : 陈登龙 南昌航空大学信息工程学院自动控制系
 	* 当前版本 ：1.0
 	* 作    者 ：陈登龙

@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 #include <cstdint>
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
-#include "rapidjson/document.h"
+#include "../rapidjson/writer.h"
+#include "../rapidjson/stringbuffer.h"
+#include "../rapidjson/document.h"
 using namespace rapidjson;
 
 #include "traits.hpp"
