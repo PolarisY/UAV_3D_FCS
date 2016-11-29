@@ -11,6 +11,7 @@
 ***************************************************************/
 #pragma once
 
+
 #include <boost/cstdint.hpp>
 
 #include "../kapok/Kapok.hpp" 
@@ -79,6 +80,12 @@ struct MFA : public BaseData
 
 	/*–Ú¡–ªØ*/
 	META(m_MessageHeader, m_TimeBootMs, m_Roll, m_Pitch, m_Yaw, m_RollSpeed, m_PitchSpeed, m_YawSpeed, m_LowCheckSum, m_HighCheckSum)
+
+	void GetMsgHeaderStr(const MessageHeader &headerInfo, std::string &headerStr);
+	void ConvertToHexString(std::string& str);
+	template <typename T>
+	bool StrHexToIntDec(T &iDec, const std::string &strHex);
+	bool HexStrToAsciiStr(std::string &asciiStr, const std::string &hexStr);
 };
 
 

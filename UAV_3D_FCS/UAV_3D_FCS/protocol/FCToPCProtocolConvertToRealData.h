@@ -36,7 +36,8 @@ struct MFADC : public BaseDataDC
 	boost::uint8_t m_LowCheckSum;	/*低位字节校验和*/
 	boost::uint8_t m_HighCheckSum;	/*高位字节校验和*/
 
-	void MFAToMFADC(const MFA& mfa);
+	void MFAToMFADC(const MFA& mfa); 
+	void MFADDCToMFA(MFADC& mfadc);
 };
 
 

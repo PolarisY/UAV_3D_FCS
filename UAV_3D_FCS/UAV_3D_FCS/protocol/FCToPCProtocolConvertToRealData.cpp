@@ -36,3 +36,27 @@ void MFADC::MFAToMFADC(const MFA& mfa)
 	m_LowCheckSum = mfa.m_LowCheckSum;
 	m_HighCheckSum = mfa.m_HighCheckSum;
 }
+
+
+/*! @function
+********************************************************************************
+* 函数名   : MFADDCToMFA
+* 功能     : 将飞行姿态物理数据包转换为协议的数据包
+* 参数     : mfadc 待转换的协议w物理值数据包
+* 返回值   : void
+* 作者     : 陈登龙 南昌航空大学信息工程学院自动控制系
+* 日期     : 2016-11-29
+*******************************************************************************/
+void MFADC::MFADDCToMFA(MFADC& mfadc)
+{
+	m_MessageHeader = mfadc.m_MessageHeader;
+	m_TimeBootMs = mfadc.m_TimeBootMs;
+	m_Roll = mfadc.m_Roll;
+	m_Pitch = mfadc.m_Pitch;
+	m_Yaw = mfadc.m_Yaw;
+	m_RollSpeed = mfadc.m_RollSpeed;
+	m_PitchSpeed = mfadc.m_PitchSpeed;
+	m_YawSpeed = mfadc.m_YawSpeed;
+	m_LowCheckSum = mfadc.m_LowCheckSum;
+	m_HighCheckSum = mfadc.m_HighCheckSum;
+}

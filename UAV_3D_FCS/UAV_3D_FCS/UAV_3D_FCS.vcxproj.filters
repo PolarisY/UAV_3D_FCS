@@ -113,6 +113,9 @@
     <ClCompile Include="protocol\FCToPCProtocolConvertToRealData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="protocol\FCToPCProtocolStruct.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UAV_3D_FCS.rc">

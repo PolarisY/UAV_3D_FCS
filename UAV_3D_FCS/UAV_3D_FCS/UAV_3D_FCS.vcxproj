@@ -215,6 +215,7 @@
     <ClCompile Include="OSGViewControl.cpp" />
     <ClCompile Include="PlayBackViewControl.cpp" />
     <ClCompile Include="protocol\FCToPCProtocolConvertToRealData.cpp" />
+    <ClCompile Include="protocol\FCToPCProtocolStruct.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
