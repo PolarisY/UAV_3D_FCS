@@ -13,7 +13,7 @@
 
 
 
-#include "TcpClient.h"
+#include "TcpClient.h" 
 #include "resource.h"
 
 // CConnectionViewControl 窗体视图
@@ -39,7 +39,9 @@ public:
 
 private:
 	/* TCP通信客户端对象 */
-	CTcpClient m_TcpClient;
+	CTcpClient* m_TcpClient;
+
+	 
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持

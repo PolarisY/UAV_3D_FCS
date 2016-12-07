@@ -27,6 +27,10 @@ CConnectionViewControl::CConnectionViewControl()
 
 CConnectionViewControl::~CConnectionViewControl()
 {
+	if (m_TcpClient != nullptr)
+	{
+		delete[] m_TcpClient;
+	}
 }
 
 void CConnectionViewControl::DoDataExchange(CDataExchange* pDX)
@@ -72,23 +76,20 @@ void CConnectionViewControl::OnBnClickedBtnReset()
 	int port = GetDlgItemInt(IDC_TCP_PORT);
 
 	//设置ip和port
-	m_TcpClient.SetConnectAddr(port, ip);
+	m_TcpClient->SetConnectAddr(port, ip);
 }
 
 
 void CConnectionViewControl::OnBnClickedBtnTcpConnect()
 {  
-	//开启TCP连接
-	m_TcpClient.StartTcpConnect();
+	//开启TCP连接 
 
-	/*if (m_TcpClient.IsTcpConnecting())
+	m_TcpClient->StartTcpConnect();
+
+	if (m_TcpClient->IsTcpConnecting())
 	{
-		SetDlgItemText(IDC_BTN_TCP_CONNECT, _T("Disconnect"));
-	}
-	else
-	{
-		SetDlgItemText(IDC_BTN_TCP_CONNECT, _T("Connect"));
-	}*/
+		MessageBox(_T("TCP is connecting!"));
+	} 
 }
 
 
@@ -97,6 +98,8 @@ void CConnectionViewControl::OnInitialUpdate()
 	CFormView::OnInitialUpdate();
 	 
 	/* 初始设置为127.0.0.1 : 10000 */
-	SetDlgItemInt(IDC_TCP_PORT, 10000);
-	GetDlgItem(IDC_TCP_IP)->SetWindowText(_T("127.0.0.1"));
+	SetDlgItemInt(IDC_TCP_PORT, 10002);
+	GetDlgItem(IDC_TCP_IP)->SetWindowText(_T("192.168.16.107")); 
+	
+	m_TcpClient = new CTcpClient; 
 }

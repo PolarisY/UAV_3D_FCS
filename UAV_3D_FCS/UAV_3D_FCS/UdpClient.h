@@ -61,12 +61,15 @@ private:
 	*******************************************************************************/
 	class MyUdpConnector : public st_udp_socket
 	{
+		typedef std::string msg_type;
+
 		public:
 			MyUdpConnector(boost::asio::io_service& io_service_): st_udp_socket(io_service_) {}
 		protected:
 			virtual bool on_msg(msg_type& msg)
 			{
 				//自定义处理消息
+				AfxMessageBox(_T("Test"));
 				return true;
 			}
 	};

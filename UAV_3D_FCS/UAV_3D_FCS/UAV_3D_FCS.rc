@@ -70,9 +70,7 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\UAV_3D_FCS.ico"
-
 IDR_UAV_3D_FCSTYPE      ICON                    "res\\UAV_3D_FCSDoc.ico"
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -80,7 +78,6 @@ IDR_UAV_3D_FCSTYPE      ICON                    "res\\UAV_3D_FCSDoc.ico"
 //
 
 IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -214,6 +211,12 @@ FONT 9, "ËÎÌו", 400, 0, 0x0
 BEGIN
 END
 
+IDD_HUD DIALOGEX 0, 0, 430, 233
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "ËÎÌו", 400, 0, 0x0
+BEGIN
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -286,6 +289,12 @@ BEGIN
     IDD_PLAY_BACK, DIALOG
     BEGIN
     END
+
+    IDD_HUD, DIALOG
+    BEGIN
+        RIGHTMARGIN, 250
+        BOTTOMMARGIN, 110
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -295,24 +304,24 @@ END
 // AFX_DIALOG_LAYOUT
 //
 
-IDD_OSG AFX_DIALOG_LAYOUT
+IDD_OSG AFX_DIALOG_LAYOUT 
 BEGIN
-    0
+    0x0000
 END
 
-IDD_FCS AFX_DIALOG_LAYOUT
+IDD_FCS AFX_DIALOG_LAYOUT 
 BEGIN
-    0
+    0x0000
 END
 
-IDD_COMMUNICATION AFX_DIALOG_LAYOUT
+IDD_COMMUNICATION AFX_DIALOG_LAYOUT 
 BEGIN
-    0
+    0x0000
 END
 
-IDD_PLAY_BACK AFX_DIALOG_LAYOUT
+IDD_PLAY_BACK AFX_DIALOG_LAYOUT 
 BEGIN
-    0
+    0x0000
 END
 
 

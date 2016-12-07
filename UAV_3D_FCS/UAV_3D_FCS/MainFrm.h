@@ -9,7 +9,7 @@
 #include "ConnectionViewControl.h"
 #include "FlightSysViewControl.h"
 #include "PlayBackViewControl.h"
-
+#include "HUDViewControl.h"
 class CMainFrame : public CFrameWnd
 {
 	
@@ -43,7 +43,8 @@ private:
 	//将总窗口分为两行一列
 	CMySplitterWnd m_SplitterWnd;   
 
-	CMySplitterWnd m_SplitterChild;
+	CMySplitterWnd m_SplitterWnd1;
+
 
 	//将下面的一行分成一行两列
 	//CMySplitterWnd m_SplitterWndBottom;

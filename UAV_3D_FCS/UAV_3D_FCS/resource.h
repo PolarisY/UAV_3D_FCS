@@ -9,6 +9,8 @@
 #define IDD_FCS                         106
 #define IDD_COMMUNICATION               107
 #define IDD_PLAY_BACK                   108
+#define IDD_OLE_PROPPAGE_LARGE          109
+#define IDD_HUD                         109
 #define IDR_MAINFRAME                   128
 #define IDR_UAV_3D_FCSTYPE              130
 #define IDC_BUTTON1                     1000

@@ -78,9 +78,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\include\boost;$(IncludePath)</IncludePath>
+    <IncludePath>D:\OSG\include;C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\include\boost;$(IncludePath)</IncludePath>
     <ReferencePath>$(ReferencePath)</ReferencePath>
-    <LibraryPath>C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\lib\libx64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\OSG\lib;C:\Program Files %28x86%29\Microsoft Visual Studio 12.0\VC\lib\libx64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -117,9 +117,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenThreadsd.lib;osgd.lib;osgDBd.lib;osgFXd.lib;osgGAd.lib;osgManipulatord.lib;osgParticled.lib;osgShadowd.lib;osgSimd.lib;osgTerraind.lib;osgTextd.lib;osgUtild.lib;osgViewerd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -190,7 +193,19 @@
   <ItemGroup>
     <ClInclude Include="ConnectionViewControl.h" />
     <ClInclude Include="FlightSysViewControl.h" />
+    <ClInclude Include="HUD.h" />
+    <ClInclude Include="HUDViewControl.h" />
+    <ClInclude Include="kapok\Common.hpp" />
+    <ClInclude Include="kapok\DeSerializer.hpp" />
+    <ClInclude Include="kapok\JsonUtil.hpp" />
+    <ClInclude Include="kapok\Kapok.hpp" />
+    <ClInclude Include="kapok\Serializer.hpp" />
+    <ClInclude Include="kapok\traits.hpp" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MemoryDC.h" />
+    <ClInclude Include="MessageBus\Any.hpp" />
+    <ClInclude Include="MessageBus\function_traits.hpp" />
+    <ClInclude Include="MessageBus\MessageBus.hpp" />
     <ClInclude Include="MySplitterWnd.h" />
     <ClInclude Include="OSGView.h" />
     <ClInclude Include="OSGViewControl.h" />
@@ -204,11 +219,13 @@
     <ClInclude Include="UAV_3D_FCS.h" />
     <ClInclude Include="UAV_3D_FCSDoc.h" />
     <ClInclude Include="UAV_3D_FCSView.h" />
-    <ClInclude Include="UdpClient.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConnectionViewControl.cpp" />
     <ClCompile Include="FlightSysViewControl.cpp" />
+    <ClCompile Include="HUD.cpp" />
+    <ClCompile Include="HUDViewControl.cpp" />
+    <ClCompile Include="kapok\Common.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="MySplitterWnd.cpp" />
     <ClCompile Include="OSGView.cpp" />
@@ -226,7 +243,6 @@
     <ClCompile Include="UAV_3D_FCS.cpp" />
     <ClCompile Include="UAV_3D_FCSDoc.cpp" />
     <ClCompile Include="UAV_3D_FCSView.cpp" />
-    <ClCompile Include="UdpClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="UAV_3D_FCS.rc" />

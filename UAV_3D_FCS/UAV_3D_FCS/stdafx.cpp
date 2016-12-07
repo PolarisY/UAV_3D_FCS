@@ -6,3 +6,5 @@
 #include "stdafx.h"
 
 
+MessageBus g_Bus;				//消息总线全局变量
+std::atomic<int> g_MFAPackNum;	//数据包全局原子变量

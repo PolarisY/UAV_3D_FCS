@@ -111,24 +111,37 @@ BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
 
 	CRect rect;
 	GetClientRect(&rect);
-
+	
 	/*将主窗口分成4个区域*/
 	if (!m_SplitterWnd.CreateStatic(this, 2, 2, WS_CHILD | WS_VISIBLE | WS_BORDER))
 	{
 		return FALSE;
-	} 
+	}  
+
+	if (!m_SplitterWnd1.CreateStatic(&m_SplitterWnd, 2, 1, WS_CHILD | WS_VISIBLE, m_SplitterWnd.IdFromRowCol(0, 1)))
+	{
+		return FALSE;
+	}
 
 	/*左上角用于3D模块*/
 	if (!m_SplitterWnd.CreateView(0, 0, RUNTIME_CLASS(COSGViewControl), CSize((int)rect.Width() * 0.7, (int)(rect.Height() * 0.8)), pContext))
 	{
 		return FALSE;
-	}
+	} 
+ 
 
-	/*右上角用于飞行控制模块*/
-	if (!m_SplitterWnd.CreateView(0, 1, RUNTIME_CLASS(CFlightSysViewControl), CSize((int)rect.Width() * 0.3, (int)(rect.Height() * 0.8)), pContext))
+	/*右上角用于飞行控制和HUD模块*/ 
+	if (!m_SplitterWnd1.CreateView(0, 0, RUNTIME_CLASS(CHUDViewControl), CSize((int)rect.Width() * 0.3, (int)(rect.Height() * 0.8 * 0.6)), pContext))
 	{
 		return FALSE;
 	}
+
+	if (!m_SplitterWnd1.CreateView(1, 0, RUNTIME_CLASS(CFlightSysViewControl), CSize((int)rect.Width() * 0.3, (int)(rect.Height() * 0.8 * 0.4)), pContext))
+	{
+		return FALSE;
+	}
+
+
 
 	/*左下角用于数据回放模块*/
 	if (!m_SplitterWnd.CreateView(1, 0, RUNTIME_CLASS(CPlayBackViewControl), CSize((int)rect.Width() * 0.7, (int)(rect.Height() * 0.2)), pContext))
@@ -141,6 +154,11 @@ BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
 	{
 		return FALSE;
 	} 
+	
+
+
+
+	  
 
 	return true;
 }

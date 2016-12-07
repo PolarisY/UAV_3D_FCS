@@ -60,13 +60,46 @@
     <ClInclude Include="TcpClient.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="UdpClient.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="protocol\FCToPCProtocolStruct.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="protocol\FCToPCProtocolConvertToRealData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kapok\Common.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kapok\DeSerializer.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kapok\JsonUtil.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kapok\Kapok.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kapok\Serializer.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="kapok\traits.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBus\Any.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBus\function_traits.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageBus\MessageBus.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HUDViewControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryDC.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,13 +140,19 @@
     <ClCompile Include="TcpClient.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UdpClient.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="protocol\FCToPCProtocolConvertToRealData.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="protocol\FCToPCProtocolStruct.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="kapok\Common.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HUDViewControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

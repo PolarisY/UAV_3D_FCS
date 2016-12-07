@@ -21,7 +21,10 @@ CTcpClient::CTcpClient() : m_pump(), m_client(m_pump)
 
 CTcpClient::~CTcpClient()
 {
-	StopTcpConnect();
+	if (m_pump.is_running())
+	{
+		m_pump.stop_service();
+	}
 }
 
 

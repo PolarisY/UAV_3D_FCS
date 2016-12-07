@@ -33,10 +33,10 @@
 
 #include <afxcontrolbars.h>     // 功能区和控件条的 MFC 支持
 
-
-
-
-
+#include <atomic>
+#include "protocol/FCToPCProtocolStruct.hpp"
+#include "protocol/FCToPCProtocolConvertToRealData.h"
+#include "MessageBus/MessageBus.hpp"
 
 
 
